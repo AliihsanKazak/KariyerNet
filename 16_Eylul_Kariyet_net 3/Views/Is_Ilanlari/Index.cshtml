@@ -1,0 +1,34 @@
+@model List<Jobs>
+<a href="/Is_Ilani_Yayinla" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+<br/>
+<br/>
+<h1 style="text-align: center">İŞ İLANLARIM</h1>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">YAYINLANMA TARİHİ</th>
+            <th scope="col">YAYIN BİTİŞ TARİHİ</th>
+            <th scope="col">KATEGORİ</th>
+            <th scope="col">MAAS</th>
+            <th scope="col">İncele</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.YayinTarihi.ToString("dd.MM.yyyy")</th>
+                <td>@item.YayinBitisTarihi.ToString("dd.MM.yyyy")</td>
+                <td>@item.Kategori</td>
+                <td>@item.Maas</td>
+                <td><a class="btn btn-warning" href="/Is_Ilanlari_Detay/Index/@item.JobsID">İNCELE</a></td>
+            </tr>
+        }
+      
+    
+    
+        </tbody>
+    </table>
+</div>

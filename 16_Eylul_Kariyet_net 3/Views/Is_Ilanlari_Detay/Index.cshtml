@@ -1,0 +1,32 @@
+@model List<BasvuruLog>
+<a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+
+
+<h1 style="text-align: center">İLANA BAŞVURANLAR</h1>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">AD</th>
+            <th scope="col">MAİL</th>
+            <th scope="col">CV</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Kullanici.NameSurname</th>
+                <td>@item.Kullanici.Email</td>
+                <td></td>
+                <td></td>
+                <td><a class="btn btn-warning" href="/Is_Ilanlari_Detay/Index/@item.JobsID">İNCELE</a></td>
+            </tr>
+        }
+      
+    
+    
+        </tbody>
+    </table>
+</div>
